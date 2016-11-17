@@ -12,20 +12,23 @@ function getLowest(arr, num){
  return cd;
 }
 
-function convertRoman(num){
+function convertToRoman(num){
  var rom = [];
   var code= [1,4,5,9,10,40,50,90,100,500,900,1000];
+  var codeMap = {"1":"I","4":"IV","5":"V","9":"IX","10":"X","40":"XL","50":"L","90":"XC","100":"C","400":"CD","500":"D","900":"CM","1000":"M"};
   var i=0;
   while(num!==0){
       var cd = getLowest(code,num);
       num = num - cd;
       rom.push(cd);
   }
-  //TODO: Convert numbers into roman letters in rom and then join them
+  rom = rom.map(function(a){
+	return codeMap[a];
+	}).join('');
   return rom;
 }
 
-convertRoman(146);
+convertToRoman(146);
 //==================================================================
 //Diff Two Arrays
 
