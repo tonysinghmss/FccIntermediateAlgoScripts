@@ -1,23 +1,31 @@
 //==================================================================
 //Roman Numerals
 
-function convertToRoman(num) {
-  var rom = [];
-  var code = ['I','V','X','L','C','D','M'];
- 
-  //Fetch all the roman factors
-  var romf = [];
-  var div =10;
-  while(num !== 0){
-    var rem = num%div;
-    romf.unshift(rem);
-    num = num - rem;
-    div = div*10;
+function getLowest(arr, num){
+  var cd;
+ for(var i =0; i<arr.length; i++){
+ 	if(num>=arr[i])
+	  cd = arr[i];
+    else
+	  break;          
+ }
+ return cd;
+}
+
+function convertRoman(num){
+ var rom = [];
+  var code= [1,4,5,9,10,40,50,90,100,500,900,1000];
+  var i=0;
+  while(num!==0){
+      var cd = getLowest(code,num);
+      num = num - cd;
+      rom.push(cd);
   }
+  //TODO: Convert numbers into roman letters in rom and then join them
   return rom;
 }
 
-convertToRoman(36);
+convertRoman(146);
 //==================================================================
 //Diff Two Arrays
 
