@@ -1,4 +1,33 @@
 //==================================================================
+// Wherefore art thou
+function whatIsInAName(collection, source) {
+  // What's in a name?
+  var arr = [];
+  // Only change code below this line
+  var ob;
+  var srcKeys = Object.keys(source);
+    var allPrsnt = false;
+    collection.forEach(function(b){
+      srcKeys.forEach(function(a){
+        if(b.hasOwnProperty(a) && source[a] == b[a]){
+          allPrsnt = true;
+        }
+        else{
+         allPrsnt = false;
+        }
+      });
+      if(allPrsnt){
+        arr.push(b);
+      } 
+    });
+    
+  // Only change code above this line
+  return arr;
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+
+//==================================================================
 //Roman Numerals
 
 function getLowest(arr, num){
