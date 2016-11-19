@@ -1,4 +1,18 @@
 //==================================================================
+//Search and Replace
+function myReplace(str, before, after) {
+  //console.log(str);
+  if(before[0] == before[0].toUpperCase()){
+    after = after[0].toUpperCase()+after.slice(1);
+  }
+  str = str.replace(before,after);
+  //console.log(str);
+  return str;
+}
+
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+
+//==================================================================
 // Wherefore art thou
 function whatIsInAName(collection, source) {
   // What's in a name?
