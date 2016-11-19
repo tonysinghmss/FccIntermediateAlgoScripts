@@ -1,4 +1,32 @@
 //==================================================================
+//Pig Latin
+function translatePigLatin(str) {
+  var vowel = ['a','e','i','o','u'];
+  var i;
+  var pigLat = [];
+  var strSplit = str.split('');
+  //console.log(strSplit);
+  for(i=0;i<strSplit.length; i++){
+    if(vowel.includes(strSplit[i])){
+      break;
+    }
+    else{
+      pigLat.push(strSplit[i]);
+    }
+  }
+  if(i>0){
+    str = str.substr(i)+pigLat.join('')+"ay";
+  }
+  else{
+    str = str.substr(i)+pigLat.join('')+"way";
+  }
+  
+  return str;
+}
+
+translatePigLatin("consonant");
+
+//==================================================================
 //Search and Replace
 function myReplace(str, before, after) {
   //console.log(str);
