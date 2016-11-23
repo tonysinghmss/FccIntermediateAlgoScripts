@@ -1,5 +1,18 @@
 //==================================================================
+//Sorted union
+//==================================================================
 //Boo who
+
+function booWho(bool) {
+  // What is the new fad diet for ghost developers? The Boolean.
+  if(bool === Boolean(bool)){
+    return true;
+  }
+  else
+    return false;
+}
+
+booWho(null);
 //==================================================================
 //Missing letters
 
