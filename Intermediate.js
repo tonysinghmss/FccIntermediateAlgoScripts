@@ -1,5 +1,21 @@
 //==================================================================
 //Sorted union
+
+function uniteUnique(arr) {
+  var uniq =[] ;
+  for(var i=0; i<arguments.length; i++){
+    arguments[i].reduce(function(acc, cur){
+      if(acc.indexOf(cur) ==  -1){
+        acc.push(cur);
+      }
+      return acc;
+    }, uniq);
+  }
+  return uniq;
+}
+
+uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+
 //==================================================================
 //Boo who
 
