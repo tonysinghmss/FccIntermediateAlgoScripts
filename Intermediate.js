@@ -1,4 +1,28 @@
 //==================================================================
+//Boo who
+//==================================================================
+//Missing letters
+
+function fearNotLetter(str) {
+  var arr = str.split('');
+  arr = arr.map(function(a){
+    return a.charCodeAt(0);
+  });
+  var j = arr[0];
+  var res;
+  for(var i=0; i< arr.length; i++){
+      if(j != arr[i]){
+        res = String.fromCharCode(j);
+        break;
+      }
+      j++;
+  }
+  return res;
+}
+
+fearNotLetter("abcdefghjklmno");
+
+//==================================================================
 //DNA pairing
 function pairElement(str) {
   var strand = str.split('');
