@@ -1,4 +1,33 @@
 //==================================================================
+//DNA pairing
+function pairElement(str) {
+  var strand = str.split('');
+  //console.log(strand);
+  var res = [];
+  for(var i =0; i< strand.length; i++){
+    var pair = [];
+    pair.push(strand[i]);
+    if(strand[i] == 'G'){
+      pair.push('C');
+    }
+    if(strand[i] == 'C'){
+      pair.push('G');
+    }
+    if(strand[i] == 'T'){
+      pair.push('A');
+    }
+    if(strand[i] == 'A'){
+      pair.push('T');
+    }
+    res.push(pair);
+  }
+  //console.log(res);
+  return res;
+}
+
+pairElement("GCG");
+
+//==================================================================
 //Pig Latin
 function translatePigLatin(str) {
   var vowel = ['a','e','i','o','u'];
