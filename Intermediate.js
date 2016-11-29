@@ -1,4 +1,22 @@
 //==================================================================
+//Convert HTML Entities
+function convertHTML(str) {
+  // &colon;&rpar;
+ return str.replace(/['"=<>\&]/g,function(c){
+		return '&'+ (entityTable[c.charCodeAt(0)] || '#'+c.charCodeAt(0))+';';
+	});
+}
+entityTable = {
+            34 : 'quot', 
+            38 : 'amp', 
+            39 : 'apos', 
+            60 : 'lt',
+	    61 : 'equal', 
+            62 : 'gt', 
+            160 : 'nbsp', 
+	};
+convertHTML("Dolce & Gabbana");
+//==================================================================
 //Sorted union
 
 function uniteUnique(arr) {
