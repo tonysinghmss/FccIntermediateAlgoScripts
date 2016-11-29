@@ -1,4 +1,17 @@
 //==================================================================
+//Spinal Tap Case
+function spinalCase(str) {
+  // "It's such a fine line between stupid, and clever."
+  // --David St. Hubbins
+  return str.replace(/[^A-Za-z]/g, ' ')// for removing the _
+    .replace(/([A-Za-z])(?=[A-Z])/g,function(c){return c+' ';})
+    .replace(/[A-Z]/g,function(c){return c.toLowerCase();})//for lowering case
+    .replace(/\s/g,'-');
+  
+}
+
+spinalCase('The_Andy_Griffith_Show');
+//==================================================================
 //Convert HTML Entities
 function convertHTML(str) {
   // &colon;&rpar;
