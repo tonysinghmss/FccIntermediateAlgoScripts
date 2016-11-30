@@ -1,4 +1,32 @@
 //==================================================================
+//Sum All Odd Fibonacci Numbers
+function fib(num){
+  var arr = [];
+  var a0=1; var a1=1;
+  arr.push(a0);
+  arr.push(a1);
+  var an = a0 + a1;
+  while(an<=num){
+    arr.push(an);
+    a0 = a1;
+    a1 = an;
+    an = a0 + a1;
+  }
+  return arr;
+}
+
+function sumFibs(num) {
+  var arr = fib(num);
+  var sum = 0;
+  for(var i=0;i<arr.length;i++){
+    if(arr[i]%2 !== 0){
+      sum = sum + arr[i];
+    }
+  }
+  return sum;
+}
+sumFibs(4);
+//==================================================================
 //Spinal Tap Case
 function spinalCase(str) {
   // "It's such a fine line between stupid, and clever."
