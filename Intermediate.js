@@ -1,4 +1,36 @@
 //==================================================================
+//Sum all primes
+function sieve(num){
+  var arr = [];
+  if(num == 1){
+    return undefined;
+  }
+  else{
+    //Create array
+    for(var i=2;i<=num;i++){
+      arr.push(i);
+    }
+    //Filter the array
+    var limit = Math.floor(Math.sqrt(num));
+    console.log(limit);
+    for(var j=2;j<=limit;j++){
+      for(var k=0;k<=arr.length;k++){
+        if(arr[k] !== j && arr[k]%j === 0 ){
+          arr[k] = 0;
+        }
+      }
+    }
+  }
+  return arr.reduce( function (acc,cv){return acc+cv;},0);
+}
+
+function sumPrimes(num) {
+  return sieve(num);
+}
+
+sumPrimes(10);
+
+//==================================================================
 //Sum All Odd Fibonacci Numbers
 function fib(num){
   var arr = [];
