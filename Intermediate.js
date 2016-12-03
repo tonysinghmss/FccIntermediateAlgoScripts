@@ -8,6 +8,36 @@ function findElement(arr, func) {
 
 findElement([1, 3, 5, 8, 9, 10], function(num){ return num % 2 === 0; });
 //==================================================================
+//Smallest Common Multiple
+function gcd(a,b){
+  if(a==b){
+    return a;
+  }
+  else if(a>b){
+    return gcd(a-b,b);
+  }
+  else{
+    return gcd(a,b-a);
+  }
+}
+
+function lcm(a,b){
+  return (a*b/gcd(a,b));
+}
+
+function smallestCommons(arr) {
+  arr.sort(function(a,b){ return a-b;});
+  var numArr = [];
+  var mul = 1;
+  for(var i=arr[0];i<=arr[1];i++){
+    numArr.push(i);
+  }
+  //mul = numArr.reduce(function(ac,cv){ return ac*cv;},1);
+  return numArr.reduce(lcm);
+}
+
+smallestCommons([1,5]);
+//==================================================================
 //Sum all primes
 function sieve(num){
   var arr = [];
