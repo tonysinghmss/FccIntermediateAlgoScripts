@@ -1,4 +1,17 @@
 //==================================================================
+//Everything be true
+function truthCheck(collection, pre) {
+  // Is everyone being true?
+  return collection
+    .map(function(n){
+      return Boolean(n[pre]);})
+    .reduce(function(ac,cv){
+      return ac && cv;
+    });
+}
+
+truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true}, {"name": "FastFoward", "onBoat": null}], "onBoat");
+//==================================================================
 //Binary Agents
 function binaryAgent(str) {
   str = str.split(' ').map(function(n){return String.fromCharCode(parseInt(n,2));}).join('');
