@@ -1,4 +1,30 @@
 //==================================================================
+//Arguments Optional
+function addTogether() {
+  var a;
+  function sa(n){
+    if(typeof n !== 'number')
+      return undefined;
+    else  return a + n;
+  }
+  if(arguments.length == 1 && (typeof arguments[0] === 'number') ){
+    a = arguments[0];
+    return sa;
+  }
+  else if(arguments.length == 2 && (typeof arguments[0] === 'number') && (typeof arguments[1] === 'number')){
+    return arguments[0] + arguments[1];
+  }
+  else if(arguments.length == 2 && (typeof arguments[0] !== 'number') && (typeof arguments[1] === 'number')){
+    return undefined;
+  }
+  else if(arguments.length == 2 && (typeof arguments[0] === 'number') && (typeof arguments[1] !== 'number')){
+    return undefined;
+  }
+}
+
+addTogether(2)([3]);
+
+//==================================================================
 //Everything be true
 function truthCheck(collection, pre) {
   // Is everyone being true?
