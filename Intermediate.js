@@ -1,4 +1,18 @@
 //==================================================================
+//Steamroller
+
+function steamrollArray(arr) {
+  // I'm a steamroller, baby
+  return arr.reduce(function(ac,cv){
+    if(Array.isArray(cv)){
+      return ac.concat(steamrollArray(cv));
+    }
+    else    return ac.concat(cv);
+  },[]);
+}
+
+steamrollArray([1, [2], [3, [[4]]]]);
+//==================================================================
 //Drop it
 function dropElements(arr, func) {
   // Drop them elements.
